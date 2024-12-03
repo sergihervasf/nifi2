@@ -728,7 +728,7 @@
       "type" : "org.apache.nifi.processors.standard.QueryRecord",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "original", "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
