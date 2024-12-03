@@ -19,36 +19,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "34503af4-f022-3321-88a2-de63006010be",
-        "name" : "SplitRecord",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "d9d2fa84-84f8-3160-8acb-54a66205d26b",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "7f71e83a-cc06-3cb8-80a3-9027ec18d346",
-        "name" : "GetFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "d1514fe5-88b6-3c94-910e-f2ec514a75a5",
         "name" : "PutFile",
         "type" : "PROCESSOR"
@@ -68,6 +38,36 @@
         "groupId" : "flow-contents-group",
         "id" : "3faff6ae-6f03-30ff-908e-cfd66c26043b",
         "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "34503af4-f022-3321-88a2-de63006010be",
+        "name" : "SplitRecord",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d9d2fa84-84f8-3160-8acb-54a66205d26b",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7f71e83a-cc06-3cb8-80a3-9027ec18d346",
+        "name" : "GetFile",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -764,7 +764,7 @@
       },
       "properties" : {
         "Create Missing Directories" : "true",
-        "Directory" : "/home/ftpuser/ftp/files/pdi_sales_small_peque_francia.csv",
+        "Directory" : "/home/nifi/activitat7",
         "Conflict Resolution Strategy" : "fail"
       },
       "propertyDescriptors" : {
@@ -918,9 +918,9 @@
       "properties" : {
         "Keep Source File" : "true",
         "Minimum File Age" : "0 sec",
-        "Polling Interval" : "0 sec",
+        "Polling Interval" : "0 secs",
         "Input Directory" : "/home/ftpuser/ftp/files/",
-        "Batch Size" : "10",
+        "Batch Size" : "1",
         "Minimum File Size" : "0 B",
         "Ignore Hidden Files" : "true",
         "Recurse Subdirectories" : "false",
