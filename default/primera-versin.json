@@ -690,7 +690,7 @@
         "y" : 376.0
       },
       "properties" : {
-        "filename" : "${now():toNumber()}-${filename}",
+        "filename" : "${UUID()} ",
         "Store State" : "Do not store state",
         "canonical-value-lookup-cache-size" : "100"
       },
