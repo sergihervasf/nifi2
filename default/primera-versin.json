@@ -19,6 +19,36 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "d1514fe5-88b6-3c94-910e-f2ec514a75a5",
+        "name" : "PutFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "cb25b8f6-5547-3ca8-a1a2-f18d789e8ff8",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "3faff6ae-6f03-30ff-908e-cfd66c26043b",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "34503af4-f022-3321-88a2-de63006010be",
         "name" : "SplitRecord",
         "type" : "PROCESSOR"
@@ -49,8 +79,8 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "d1514fe5-88b6-3c94-910e-f2ec514a75a5",
-        "name" : "PutFile",
+        "id" : "3faff6ae-6f03-30ff-908e-cfd66c26043b",
+        "name" : "UpdateAttribute",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -638,6 +668,71 @@
       "type" : "org.apache.nifi.processors.standard.QueryRecord",
       "yieldDuration" : "1 sec"
     }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3faff6ae-6f03-30ff-908e-cfd66c26043b",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "UpdateAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 680.0,
+        "y" : 376.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "canonical-value-lookup-cache-size" : "100"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "canonical-value-lookup-cache-size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "canonical-value-lookup-cache-size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ "success", "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -656,8 +751,8 @@
       "name" : "PutFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 512.0,
-        "y" : 116.0
+        "x" : 704.0,
+        "y" : 48.0
       },
       "properties" : {
         "Create Missing Directories" : "true",
