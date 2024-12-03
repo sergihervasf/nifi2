@@ -183,7 +183,7 @@
     },
     "processGroups" : [ ],
     "processors" : [ {
-      "autoTerminatedRelationships" : [ "No Retry", "Failure" ],
+      "autoTerminatedRelationships" : [ "No Retry", "Retry", "Failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -201,8 +201,8 @@
       "name" : "InvokeHTTP",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -296.0,
-        "y" : -232.0
+        "x" : -240.0,
+        "y" : -320.0
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
@@ -481,7 +481,7 @@
       "type" : "org.apache.nifi.processors.standard.InvokeHTTP",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "failure", "unmatched" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -499,14 +499,14 @@
       "name" : "EvaluateJsonPath",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 348.0,
-        "y" : 110.20001220703125
+        "x" : 384.0,
+        "y" : 168.0
       },
       "properties" : {
         "instrucciones" : "$.strInstructionsES",
         "ingrediente1" : "$.strIngredient1",
         "medida_ingrediente3" : "$.strMeasure3",
-        "Destination" : "flowfile-content",
+        "Destination" : "flowfile-attribute",
         "medida_ingrediente4" : "$.strMeasure4",
         "ingrediente3" : "$.strIngredient3",
         "ingrediente2" : "$.strIngredient2",
@@ -717,7 +717,7 @@
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "failure" ],
+      "autoTerminatedRelationships" : [ "original", "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -735,8 +735,8 @@
       "name" : "SplitJson",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -232.0,
-        "y" : 72.0
+        "x" : -312.0,
+        "y" : 120.0
       },
       "properties" : {
         "Max String Length" : "20 MB",
@@ -776,7 +776,7 @@
       "type" : "org.apache.nifi.processors.standard.SplitJson",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -794,8 +794,8 @@
       "name" : "AttributesToJSON",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 320.0,
-        "y" : -136.0
+        "x" : 328.0,
+        "y" : -104.0
       },
       "properties" : {
         "Destination" : "flowfile-attribute",
@@ -866,7 +866,7 @@
       "type" : "org.apache.nifi.processors.standard.AttributesToJSON",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "success", "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -884,8 +884,8 @@
       "name" : "PutFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 802.0,
-        "y" : -183.79998779296875
+        "x" : 848.0,
+        "y" : -80.0
       },
       "properties" : {
         "Create Missing Directories" : "true",
