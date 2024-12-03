@@ -608,7 +608,7 @@
       },
       "properties" : {
         "dbf-default-precision" : "10",
-        "FranciaMayor1" : "SELECT * FROM FLOWFILE WHERE Country = 'France' AND Units > 1",
+        "FranciaMayor1" : "select * from FLOWFILE where Country = 'France' and Units > 1",
         "record-writer" : "d5d85ef4-90be-31e1-9617-3afecf91b15c",
         "record-reader" : "c1325674-5da2-3d94-9f80-aec2cbc33dc8",
         "include-zero-record-flowfiles" : "false",
