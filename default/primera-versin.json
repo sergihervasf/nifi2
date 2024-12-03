@@ -690,6 +690,7 @@
         "y" : 376.0
       },
       "properties" : {
+        "filename" : "${now():toNumber()}-${filename}",
         "Store State" : "Do not store state",
         "canonical-value-lookup-cache-size" : "100"
       },
@@ -699,6 +700,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "filename" : {
+          "displayName" : "filename",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "filename",
           "sensitive" : false
         },
         "Store State" : {
