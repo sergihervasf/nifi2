@@ -569,7 +569,7 @@
         "put-db-record-binary-format" : "UTF-8",
         "db-type" : "MySQL",
         "put-db-record-quoted-identifiers" : "false",
-        "put-db-record-table-name" : "empleados",
+        "put-db-record-table-name" : "bebidas",
         "put-db-record-unmatched-field-behavior" : "Ignore Unmatched Fields",
         "put-db-record-max-batch-size" : "1000",
         "put-db-record-record-reader" : "3e08df38-c3ca-31c1-b61c-fffcbfd42ec5",
@@ -1077,7 +1077,7 @@
       "properties" : {
         "Destination" : "flowfile-content",
         "Null Value" : "false",
-        "Attributes List" : "idDrink,nom,categoria,ingrediente1,ingrediente2,ingrediente3,ingrediente4, instrucciones, medida_ingrediente1, medida_ingrediente2, medida_ingrediente3, medida_ingrediente4",
+        "Attributes List" : "idDrink,nombre,categoria,ingrediente1,ingrediente2,ingrediente3,ingrediente4, instrucciones, medida_ingrediente1, medida_ingrediente2, medida_ingrediente3, medida_ingrediente4",
         "Pretty Print" : "false",
         "Include Core Attributes" : "true",
         "JSON Handling Strategy" : "ESCAPED"
@@ -1161,8 +1161,8 @@
       "name" : "UpdateAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 336.0,
-        "y" : -352.0
+        "x" : 416.0,
+        "y" : -368.0
       },
       "properties" : {
         "filename" : "${idDrink}.json",
@@ -1308,6 +1308,7 @@
         "medida_ingrediente2" : "$.strMeasure2",
         "categoria" : "$.strCategory",
         "Null Value Representation" : "empty string",
+        "nombre" : "$.strDrink",
         "Path Not Found Behavior" : "ignore",
         "idDrink" : "$.idDrink",
         "ingrediente4" : "$.strIngredient4"
@@ -1402,6 +1403,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Null Value Representation",
+          "sensitive" : false
+        },
+        "nombre" : {
+          "displayName" : "nombre",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "nombre",
           "sensitive" : false
         },
         "Path Not Found Behavior" : {
