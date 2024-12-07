@@ -361,7 +361,7 @@
     "inputPorts" : [ ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Excel_to_Mysql",
+    "name" : "Activitat 10",
     "outputPorts" : [ ],
     "position" : {
       "x" : 0.0,
@@ -718,8 +718,8 @@
       "name" : "GetFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -232.0,
-        "y" : -96.0
+        "x" : -328.0,
+        "y" : -144.0
       },
       "properties" : {
         "Keep Source File" : "true",
