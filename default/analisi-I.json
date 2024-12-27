@@ -85,19 +85,19 @@
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "833f2163-1c80-392e-a61e-168265be4317",
+      "identifier" : "c6ef0da7-42fc-35d5-bd7f-8944d4f0ee7a",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
+      "selectedRelationships" : [ "failure", "success" ],
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "454675d4-1830-3aa7-bb58-078f478a99eb",
-        "name" : "GetFile",
+        "id" : "24688f38-27bb-3b57-998a-953c92f9b52f",
+        "name" : "ConvertRecord",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -161,7 +161,7 @@
         "Value Separator" : ",",
         "Record Separator" : "\\n",
         "Escape Character" : "\\",
-        "Skip Header Line" : "false",
+        "Skip Header Line" : "true",
         "Trim Fields" : "true",
         "schema-name" : "${schema.name}",
         "csv-reader-csv-parser" : "commons-csv",
@@ -784,20 +784,20 @@
       "name" : "RenameRecordField",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -88.0,
-        "y" : 56.0
+        "x" : -120.0,
+        "y" : 88.0
       },
       "properties" : {
-        "sample_id" : "id_muestra",
+        "id_muestra" : "$.sample_id",
         "Record Writer" : "d33f1bd1-d48b-39e1-8b54-809b076fa2bf",
         "Record Reader" : "26fdf724-5cb1-3d4d-b2d4-1229d032da32"
       },
       "propertyDescriptors" : {
-        "sample_id" : {
-          "displayName" : "sample_id",
+        "id_muestra" : {
+          "displayName" : "id_muestra",
           "dynamic" : true,
           "identifiesControllerService" : false,
-          "name" : "sample_id",
+          "name" : "id_muestra",
           "sensitive" : false
         },
         "Record Writer" : {
