@@ -49,6 +49,36 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "ac1197ba-9272-351b-accd-f2ed4cdc5f43",
+        "name" : "SplitRecord",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "bd606f62-163e-35c1-afeb-a092bb4035e2",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "b5df782b-8381-3d27-9464-4c5398e5597c",
+        "name" : "ConvertRecord",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "f0a5b151-65df-36c3-87a5-a8c88c7d6d36",
         "name" : "QueryRecord",
         "type" : "PROCESSOR"
@@ -68,6 +98,42 @@
         "groupId" : "flow-contents-group",
         "id" : "581556d7-554d-3479-8ce8-58b95cef3474",
         "name" : "Reemplazar . por ,",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : 2137.3438720703125,
+        "y" : 319.5986328125
+      }, {
+        "x" : 1785.4373779296875,
+        "y" : 372.2333679199219
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "9982931b-869a-31a5-8eb4-a941628d82fe",
+        "name" : "PutMongo",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "ea9bfc58-ff54-3638-aa30-c4bebc7538f7",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "9982931b-869a-31a5-8eb4-a941628d82fe",
+        "name" : "PutMongo",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -158,6 +224,36 @@
         "groupId" : "flow-contents-group",
         "id" : "f0a5b151-65df-36c3-87a5-a8c88c7d6d36",
         "name" : "QueryRecord",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "9982931b-869a-31a5-8eb4-a941628d82fe",
+        "name" : "PutMongo",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "198ebddc-bf32-3c2f-b26f-a0525865643e",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "splits" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ac1197ba-9272-351b-accd-f2ed4cdc5f43",
+        "name" : "SplitRecord",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -283,6 +379,78 @@
       "zIndex" : 0
     } ],
     "controllerServices" : [ {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-mongodb-services-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-mongodb-client-service-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.0.0"
+        },
+        "type" : "org.apache.nifi.mongodb.MongoDBClientService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "b48aeba2-b140-322a-b26a-a452bf873eb2",
+      "name" : "MongoDBControllerService",
+      "properties" : {
+        "ssl-client-auth" : "REQUIRED",
+        "Database User" : "hervas_ser68",
+        "mongo-uri" : "mongodb+srv://cluster0.jayepce.mongodb.net/",
+        "mongo-write-concern" : "ACKNOWLEDGED"
+      },
+      "propertyDescriptors" : {
+        "ssl-context-service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "ssl-context-service",
+          "sensitive" : false
+        },
+        "ssl-client-auth" : {
+          "displayName" : "Client Auth",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "ssl-client-auth",
+          "sensitive" : false
+        },
+        "Database User" : {
+          "displayName" : "Database User",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database User",
+          "sensitive" : false
+        },
+        "mongo-uri" : {
+          "displayName" : "Mongo URI",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "mongo-uri",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        },
+        "mongo-write-concern" : {
+          "displayName" : "Write Concern",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "mongo-write-concern",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.mongodb.MongoDBControllerService"
+    }, {
       "bulletinLevel" : "WARN",
       "bundle" : {
         "artifact" : "nifi-record-serialization-services-nar",
@@ -1609,6 +1777,119 @@
       "type" : "org.apache.nifi.processors.standard.GetFile",
       "yieldDuration" : "1 sec"
     }, {
+      "autoTerminatedRelationships" : [ "success" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-mongodb-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "9982931b-869a-31a5-8eb4-a941628d82fe",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutMongo",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1312.0,
+        "y" : 288.0
+      },
+      "properties" : {
+        "mongo-client-service" : "b48aeba2-b140-322a-b26a-a452bf873eb2",
+        "Upsert" : "false",
+        "Update Method" : "one",
+        "Mode" : "insert",
+        "Mongo Collection Name" : "ventas",
+        "put-mongo-update-mode" : "doc",
+        "Mongo Database Name" : "examen",
+        "Character Set" : "UTF-8"
+      },
+      "propertyDescriptors" : {
+        "mongo-client-service" : {
+          "displayName" : "Client Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "mongo-client-service",
+          "sensitive" : false
+        },
+        "Upsert" : {
+          "displayName" : "Upsert",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Upsert",
+          "sensitive" : false
+        },
+        "Update Query Key" : {
+          "displayName" : "Update Query Key",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Update Query Key",
+          "sensitive" : false
+        },
+        "Update Method" : {
+          "displayName" : "Update Method",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Update Method",
+          "sensitive" : false
+        },
+        "Mode" : {
+          "displayName" : "Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mode",
+          "sensitive" : false
+        },
+        "Mongo Collection Name" : {
+          "displayName" : "Mongo Collection Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mongo Collection Name",
+          "sensitive" : false
+        },
+        "putmongo-update-query" : {
+          "displayName" : "Update Query",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "putmongo-update-query",
+          "sensitive" : false
+        },
+        "put-mongo-update-mode" : {
+          "displayName" : "Update Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "put-mongo-update-mode",
+          "sensitive" : false
+        },
+        "Mongo Database Name" : {
+          "displayName" : "Mongo Database Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Mongo Database Name",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.mongodb.PutMongo",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -1666,6 +1947,65 @@
       "type" : "org.apache.nifi.processors.standard.LogMessage",
       "yieldDuration" : "1 sec"
     }, {
+      "autoTerminatedRelationships" : [ "original", "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "ac1197ba-9272-351b-accd-f2ed4cdc5f43",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "SplitRecord",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 672.0,
+        "y" : 232.0
+      },
+      "properties" : {
+        "Record Writer" : "4f0e1514-7451-35de-8901-4fd4d050146a",
+        "Record Reader" : "bd863cd7-6cbd-3ff9-9a94-899d02987af3",
+        "Records Per Split" : "1"
+      },
+      "propertyDescriptors" : {
+        "Record Writer" : {
+          "displayName" : "Record Writer",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Writer",
+          "sensitive" : false
+        },
+        "Record Reader" : {
+          "displayName" : "Record Reader",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Record Reader",
+          "sensitive" : false
+        },
+        "Records Per Split" : {
+          "displayName" : "Records Per Split",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Records Per Split",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.SplitRecord",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -1684,8 +2024,8 @@
       "name" : "UpdateAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 672.0,
-        "y" : 304.0
+        "x" : 616.0,
+        "y" : 560.0
       },
       "properties" : {
         "filename" : "laborables.json",
@@ -1758,7 +2098,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 816.0,
-        "y" : 640.0
+        "y" : 824.0
       },
       "properties" : {
         "Create Missing Directories" : "true",
